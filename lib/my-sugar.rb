@@ -11,7 +11,7 @@ end
 
 include MySugar::Stuff # ah..
 
-require 'active_support/core_ext/module/delegation' # oh.. [add to gemspec?]
+require 'active_support/core_ext/module/delegation' # oh..
 
 # monkeys out of the zoo!
 class Module
