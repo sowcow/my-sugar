@@ -1,5 +1,3 @@
-module My
-  module Sugar
-    VERSION = "0.0.1"
-  end
+module MySugar
+  VERSION = "0.0.1"
 end
