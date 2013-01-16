@@ -11,7 +11,10 @@ end
 
 include MySugar::Stuff # ah..
 
-require 'active_support/core_ext/module/delegation' # oh..
+# require 'active_support/core_ext/module/delegation' # oh..
+def require_delegation
+  require 'active_support/core_ext/module/delegation'
+end
 
 # monkeys out of the zoo!
 class Module

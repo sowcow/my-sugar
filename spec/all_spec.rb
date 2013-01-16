@@ -20,10 +20,11 @@ describe MySugar do
     Any.new.test.should == 'here'
   end
 
-  specify 'delegation' do
-    module Nighbour; def self.test!; 'here!' end end
-    class Other; delegate :test!, to: :Nighbour end
-    Other.new.test!.should == 'here!'
-  end
+  # specify 'delegation [using active_support]' do
+  #   require_delegation
+  #   module Nighbour; def self.test!; 'here!' end end
+  #   class Other; delegate :test!, to: :Nighbour end
+  #   Other.new.test!.should == 'here!'
+  # end
 
 end
