@@ -17,12 +17,17 @@ require 'active_support/core_ext/module/delegation' # oh.. [add to gemspec?]
 class Module
   def is *others; include *others end
 end
-
-# ... MySugar#x using mm
-# class Object
-#   def method_missing name, *a, &block
-#     if name =~ /^[^_]+_$/ && respond_to?(:name)
-#       ........... map_{}  ==>  map &x {}
-#     else super end
-#   end 
-# end
+# ..
+# to get method names I used:
+# >> p methods = Enumerable.instance_methods.select {|x| Enumerable.instance_method(x).arity == 0 }
+# no bang(!) versions
+module Enumerable
+  methods = [:sort, :sort_by, :find_all, :select, :reject, :collect, :map, :flat_map,
+             :collect_concat, :partition, :group_by, :all?, :any?, :one?, :none?, :min,
+             :max, :minmax, :min_by, :max_by, :minmax_by, :take_while, :drop_while]
+  methods.each do |name|
+    define_method name[/^.*[^\?]/]+'_' do |&block|
+      send name, &x(&block)
+    end
+  end
+end
