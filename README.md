@@ -1,4 +1,4 @@
-# My::Sugar
+# MySugar
 
 TODO: Write a gem description
 
