@@ -11,10 +11,21 @@ end
 
 include MySugar::Stuff # ah..
 
-# require 'active_support/core_ext/module/delegation' # oh..
+
+
+## CAUTION: not tested area
 def require_delegation
   require 'active_support/core_ext/module/delegation'
 end
+
+def require_bundle
+  require 'bundler'
+  Bundler.require
+end
+alias require_bundler require_bundle
+###########################
+
+
 
 # monkeys out of the zoo!
 class Module
