@@ -24,9 +24,9 @@ def require_bundle
 end
 alias require_bundler require_bundle
 
-def require_all mask
-  Dir[mask].each { |x| require_relative x }
-end
+# def require_all mask # crap!
+#   Dir[mask].each { |x| require_relative x }
+# end
 ###########################
 
 
